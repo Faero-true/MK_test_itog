@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Итоговый тест МК 100 вопросов</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .question p {
+      margin: 5px 0;
+    }
+    .feedback {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    .correct {
+      color: green;
+    }
+    .incorrect {
+      color: red;
+    }
+    label {
+      display: block;
+      margin: 4px 0;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function checkAnswer(radio) {
+      const questionDiv = radio.closest('.question');
+      const radios = questionDiv.querySelectorAll('input[type="radio"]');
+      // Отключаем все варианты для текущего вопроса, чтобы нельзя было изменить ответ
+      radios.forEach(r => r.disabled = true);
+      const feedbackDiv = questionDiv.querySelector('.feedback');
+      if (radio.dataset.correct === "true") {
+        feedbackDiv.textContent = "Верно!";
+        feedbackDiv.className = "feedback correct";
+      } else {
+        // Ищем правильный ответ среди вариантов
+        const correctRadio = questionDiv.querySelector('input[type="radio"][data-correct="true"]');
+        const correctText = correctRadio.parentNode.querySelector('.option-text').textContent;
+        feedbackDiv.textContent = "Неверно! Правильный ответ: " + correctText;
+        feedbackDiv.className = "feedback incorrect";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Итоговый тест МК 100 вопросов</h1>
+
+  <!-- Вопрос 1 -->
+  <div class="question" id="q1">
+    <p><strong>М-1</strong></p>
+    <p>Повреждение машин, станков, оборудования, зданий, сооружений, в результате которых человеческих жертв нет или они единичны</p>
+    <label><input type="radio" name="q1" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">авария</span></label>
+    <label><input type="radio" name="q1" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">происшествие</span></label>
+    <label><input type="radio" name="q1" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">катастрофа</span></label>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <!-- Вопрос 2 -->
+  <div class="question" id="q2">
+    <p><strong>Вопрос 2:</strong> Катастрофы подразделяются на</p>
+    <label><input type="radio" name="q2" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">природные и антропогенные</span></label>
+    <label><input type="radio" name="q2" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">метеорологические, тектонические, техногенные, транспортные, космические</span></label>
+    <label><input type="radio" name="q2" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">федеральные, межрегиональные, региональные, межмуниципальные, муниципальные, локальные</span></label>
+    <label><input type="radio" name="q2" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">локальные, местные, территориальные, федеральные, трансграничные</span></label>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <!-- Вопрос 3 -->
+  <div class="question" id="q3">
+    <p><strong>Вопрос 3:</strong> Потери погибшими, умершими, пропавшими безвести</p>
+    <label><input type="radio" name="q3" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">общие потери</span></label>
+    <label><input type="radio" name="q3" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">санитарные потери</span></label>
+    <label><input type="radio" name="q3" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">безвозвратные потери</span></label>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <!-- Вопрос 4 -->
+  <div class="question" id="q4">
+    <p><strong>Вопрос 4:</strong> Пострадавшие</p>
+    <label><input type="radio" name="q4" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">пораженные и лица, понесшие при чрезвычайной ситуации материальные убытки, моральный ущерб, а также имеющие психические и психосоматические нарушения проходящего характера</span></label>
+    <label><input type="radio" name="q4" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">люди, у которых в результате непосредственного или опосредованного воздействия на них поражающих факторов источника чрезвычайной ситуации возникли нарушения здоровья</span></label>
+    <label><input type="radio" name="q4" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">люди, оказавшиеся в зоне чрезвычайной ситуации</span></label>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <!-- Вопрос 5 -->
+  <div class="question" id="q5">
+    <p><strong>Вопрос 5:</strong> Очаг поражения</p>
+    <label><input type="radio" name="q5" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">территория, на которой вследствие аварии или катастрофы произошли разрушения</span></label>
+    <label><input type="radio" name="q5" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">территория, на которой произошла дезорганизация системы управления территориального здравоохранения, потеря медицинских сил и средств</span></label>
+    <label><input type="radio" name="q5" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">территория, на которой в результате того или другого вида ЧС возникают массовые поражения людей, животных, растений и разрушается система жизнеобеспечения</span></label>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+
+  <!-- Вопрос 6 -->
+  <div class="question" id="q6">
+    <p><strong>Вопрос 6:</strong> Санитарные потери</p>
+    <label><input type="radio" name="q6" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">заболевшие инфекционными заболевания</span></label>
+    <label><input type="radio" name="q6" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">пострадавшие с нарушением санитарным состоянием</span></label>
+    <label><input type="radio" name="q6" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">пораженные (оставшиеся в живых) в результате ЧС</span></label>
+    <div class="feedback" id="feedback6"></div>
+  </div>
+
+  <!-- Вопрос 7 -->
+  <div class="question" id="q7">
+    <p><strong>Вопрос 7:</strong> Внезапное событие, влекущее за собой разрушение зданий, сооружений и гибель людей</p>
+    <label><input type="radio" name="q7" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">авария</span></label>
+    <label><input type="radio" name="q7" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">происшествие</span></label>
+    <label><input type="radio" name="q7" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">катастрофа</span></label>
+    <div class="feedback" id="feedback7"></div>
+  </div>
+
+  <!-- Вопрос 8 -->
+  <div class="question" id="q8">
+    <p><strong>Вопрос 8:</strong> Повреждения, возникающие в результате одновременного или последовательного воздействия на организм нескольких поражающих факторов</p>
+    <label><input type="radio" name="q8" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">изолированные</span></label>
+    <label><input type="radio" name="q8" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">множественные</span></label>
+    <label><input type="radio" name="q8" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">сочетанные</span></label>
+    <label><input type="radio" name="q8" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">комбинированные</span></label>
+    <div class="feedback" id="feedback8"></div>
+  </div>
+
+  <!-- Вопрос 9 -->
+  <div class="question" id="q9">
+    <p><strong>Вопрос 9:</strong> Структура санитарных потерь</p>
+    <label><input type="radio" name="q9" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">размер потерь в абсолютных числах</span></label>
+    <label><input type="radio" name="q9" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">процентное отношение различных категорий потерь к общему числу санитарных потерь</span></label>
+    <div class="feedback" id="feedback9"></div>
+  </div>
+
+  <!-- Вопрос 10 -->
+  <div class="question" id="q10">
+    <p><strong>Вопрос 10:</strong> Летальность</p>
+    <label><input type="radio" name="q10" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">отношение числа умерших при определенной болезни к числу больных той же болезнью и является при прочих равных условиях выражением тяжести тех или иных заболеваний</span></label>
+    <label><input type="radio" name="q10" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">отношение числа умерших от определенной болезни (или болезней) к численности населения</span></label>
+    <label><input type="radio" name="q10" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">относительный уровень смертельных исходов среди больных той или иной болезнью (раненых с тем или иным ранением) или в группе больных (раненых) различными болезнями (ранениями) в целом. (частота смертельных исходов при заболеваниях)</span></label>
+    <label><input type="radio" name="q10" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">термин, выражающий размеры, частоту распространения смертных случаев среди населения</span></label>
+    <div class="feedback" id="feedback10"></div>
+  </div>
+
+  <!-- Вопрос 11 -->
+  <div class="question" id="q11">
+    <p><strong>Вопрос 11:</strong> Чрезвычайная ситуация межмуниципального характера:</p>
+    <label><input type="radio" name="q11" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">зона ЧС затрагивает территорию двух и более субъектов РФ, пострадавших от 50 до 500 человек, материальный ущерб от 5 до 500 млн. руб.</span></label>
+    <label><input type="radio" name="q11" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">зона ЧС затрагивает территорию двух и более поселений, внутригородских территорий города федерального значения или межселенную территорию</span></label>
+    <label><input type="radio" name="q11" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">зона ЧС не выходит за пределы территории одного субъекта РФ, пострадавших от 50 до 500 человек, материальный ущерб от 5 до 500 млн. руб.</span></label>
+    <div class="feedback" id="feedback11"></div>
+  </div>
+
+  <!-- Вопрос 12 -->
+  <div class="question" id="q12">
+    <p><strong>Вопрос 12:</strong> В своем развитии ЧС проходят основные фазы:</p>
+    <label><input type="radio" name="q12" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">фазы: накопления, инициирования, развития и протекания, действия остаточных факторов поражения, ликвидации</span></label>
+    <label><input type="radio" name="q12" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">фазы: изоляции, спасения, восстановления</span></label>
+    <label><input type="radio" name="q12" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">фазы: инициирования, накопления, действия остаточных факторов поражения, развития и протекания, ликвидации</span></label>
+    <div class="feedback" id="feedback12"></div>
+  </div>
+
+  <!-- Вопрос 13 -->
+  <div class="question" id="q13">
+    <p><strong>Вопрос 13:</strong> В какую из фаз развития ЧС ее можно предупредить:</p>
+    <label><input type="radio" name="q13" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">инициирования</span></label>
+    <label><input type="radio" name="q13" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">накопления</span></label>
+    <label><input type="radio" name="q13" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">развития и протекания</span></label>
+    <label><input type="radio" name="q13" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">действия остаточных факторов</span></label>
+    <label><input type="radio" name="q13" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">ликвидации</span></label>
+    <div class="feedback" id="feedback13"></div>
+  </div>
+
+  <!-- Вопрос 14 -->
+  <div class="question" id="q14">
+    <p><strong>Вопрос 14:</strong> При экономическом ущербе до 5 млн.рублей, чрезвычайная ситуация в пределах межселенной территории относится к</p>
+    <label><input type="radio" name="q14" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">локальной</span></label>
+    <label><input type="radio" name="q14" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">муниципальной</span></label>
+    <label><input type="radio" name="q14" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">межмуниципальной</span></label>
+    <label><input type="radio" name="q14" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">региональной</span></label>
+    <label><input type="radio" name="q14" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">межрегиональной</span></label>
+    <label><input type="radio" name="q14" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">федеральной</span></label>
+    <div class="feedback" id="feedback14"></div>
+  </div>
+
+  <!-- Вопрос 15 -->
+  <div class="question" id="q15">
+    <p><strong>Вопрос 15:</strong> Воздействие вторичных поражающих факторов проявляется в следующей фазе ЧС:</p>
+    <label><input type="radio" name="q15" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">инициирования</span></label>
+    <label><input type="radio" name="q15" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">накопления</span></label>
+    <label><input type="radio" name="q15" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">развития и протекания</span></label>
+    <label><input type="radio" name="q15" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">действия остаточных факторов</span></label>
+    <label><input type="radio" name="q15" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">ликвидации</span></label>
+    <div class="feedback" id="feedback15"></div>
+  </div>
+
+  <!-- Вопрос 16 -->
+  <div class="question" id="q16">
+    <p><strong>Вопрос 16:</strong> Поражающий фактор источника ЧС</p>
+    <label><input type="radio" name="q16" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">составляющая опасного явления или процесса, вызванная источником чрезвычайной ситуации и характеризуемая физическими, химическими и биологическими действиями или проявлениями, которые определяются или выражаются соответствующими параметрами</span></label>
+    <label><input type="radio" name="q16" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">катастрофа, вызванная источником чрезвычайной ситуации и характеризуемая физическими, химическими и биологическими проявлениями</span></label>
+    <div class="feedback" id="feedback16"></div>
+  </div>
+
+  <!-- Вопрос 17 -->
+  <div class="question" id="q17">
+    <p><strong>Вопрос 17:</strong> Воздействие лучистой энергией относится к поражающему фактору</p>
+    <label><input type="radio" name="q17" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">механическому</span></label>
+    <label><input type="radio" name="q17" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">динамическому</span></label>
+    <label><input type="radio" name="q17" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">термическому</span></label>
+    <label><input type="radio" name="q17" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">химическому</span></label>
+    <label><input type="radio" name="q17" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">проникающему</span></label>
+    <div class="feedback" id="feedback17"></div>
+  </div>
+
+  <!-- Вопрос 18 -->
+  <div class="question" id="q18">
+    <p><strong>Вопрос 18:</strong> Воздействие ультрафиолетом относится к поражающему фактору</p>
+    <label><input type="radio" name="q18" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">механическому</span></label>
+    <label><input type="radio" name="q18" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">термическому</span></label>
+    <label><input type="radio" name="q18" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">химическому</span></label>
+    <label><input type="radio" name="q18" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">проникающему</span></label>
+    <div class="feedback" id="feedback18"></div>
+  </div>
+
+  <!-- Вопрос 19 -->
+  <div class="question" id="q19">
+    <p><strong>Вопрос 19:</strong> По генезису поражающие факторы подразделяют</p>
+    <label><input type="radio" name="q19" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">на факторы прямого действия или первичные и побочного действия или вторичные</span></label>
+    <label><input type="radio" name="q19" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">на химические, физические, биологические</span></label>
+    <label><input type="radio" name="q19" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">на механические, термические, химические, биологические, проникающие, психогенные</span></label>
+    <div class="feedback" id="feedback19"></div>
+  </div>
+
+  <!-- Вопрос 20 -->
+  <div class="question" id="q20">
+    <p><strong>Вопрос 20:</strong> Воздействие ионизирующим излучением относится к поражающему фактору</p>
+    <label><input type="radio" name="q20" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">механическому</span></label>
+    <label><input type="radio" name="q20" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">динамическому</span></label>
+    <label><input type="radio" name="q20" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">термическому</span></label>
+    <label><input type="radio" name="q20" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">химическому</span></label>
+    <label><input type="radio" name="q20" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">проникающему</span></label>
+    <div class="feedback" id="feedback20"></div>
+  </div>
+
+  <!-- Вопрос 21 -->
+  <div class="question" id="q21">
+    <p><strong>Вопрос 21:</strong> Какой из поражающих факторов является всегда вторичным</p>
+    <label><input type="radio" name="q21" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">механический</span></label>
+    <label><input type="radio" name="q21" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">химический</span></label>
+    <label><input type="radio" name="q21" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">проникающий</span></label>
+    <label><input type="radio" name="q21" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">психогенный</span></label>
+    <label><input type="radio" name="q21" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">биологический</span></label>
+    <label><input type="radio" name="q21" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">термический</span></label>
+    <div class="feedback" id="feedback21"></div>
+  </div>
+
+  <!-- Вопрос 22 -->
+  <div class="question" id="q22">
+    <p><strong>Вопрос 22:</strong> Анализ причин, обусловивших введение режима, прогнозирование возможного развития обстановки и разработка предложений по организации работы Службы – одно из мероприятий следующего режима функционирования ВСМК</p>
+    <label><input type="radio" name="q22" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">повседневной деятельности</span></label>
+    <label><input type="radio" name="q22" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">повышенной готовности</span></label>
+    <label><input type="radio" name="q22" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">чрезвычайной ситуации</span></label>
+    <label><input type="radio" name="q22" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">военного времени</span></label>
+    <div class="feedback" id="feedback22"></div>
+  </div>
+
+  <!-- Вопрос 23 -->
+  <div class="question" id="q23">
+    <p><strong>Вопрос 23:</strong> Медико-санитарное обеспечение включает</p>
+    <label><input type="radio" name="q23" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">лечебно-эвакуационное, санитарно-гигиеническое, противоэпидемическое обеспечение, медицинские мероприятия по защите населения и личного состава, участвующего в ликвидации чрезвычайных ситуаций, снабжение медицинским имуществом</span></label>
+    <label><input type="radio" name="q23" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">обеспечение медицинским имуществом и техникой</span></label>
+    <label><input type="radio" name="q23" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">медицинское снабжение имуществом и техникой</span></label>
+    <div class="feedback" id="feedback23"></div>
+  </div>
+
+  <!-- Вопрос 24 -->
+  <div class="question" id="q24">
+    <p><strong>Вопрос 24:</strong> Принцип эшелонирования и маневра силами и средствами ВСМК означает</p>
+    <label><input type="radio" name="q24" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">перемещение сил и средств службы эшелонами</span></label>
+    <label><input type="radio" name="q24" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">эшелонированное использование сил и средств СМК в подготовительный период и маневр ими при ЧС</span></label>
+    <div class="feedback" id="feedback24"></div>
+  </div>
+
+  <!-- Вопрос 25 -->
+  <div class="question" id="q25">
+    <p><strong>Вопрос 25:</strong> Бригады скорой медицинской помощи являются</p>
+    <label><input type="radio" name="q25" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">штатными формированиями ВСМК</span></label>
+    <label><input type="radio" name="q25" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">нештатными формирования ВСМК</span></label>
+    <div class="feedback" id="feedback25"></div>
+  </div>
+
+  <!-- Вопрос 26 -->
+  <div class="question" id="q26">
+    <p><strong>Вопрос 26:</strong> Специализированные противоэпидемические бригады создаются на базе:</p>
+    <label><input type="radio" name="q26" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">инфекционных больниц</span></label>
+    <label><input type="radio" name="q26" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">центров госсанэпиднадзора</span></label>
+    <label><input type="radio" name="q26" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">противочумных учреждений</span></label>
+    <div class="feedback" id="feedback26"></div>
+  </div>
+
+  <!-- Вопрос 27 -->
+  <div class="question" id="q27">
+    <p><strong>Вопрос 27:</strong> Срок готовности БСМП к выеду с имуществом в район ЧС:</p>
+    <label><input type="radio" name="q27" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">2 часа</span></label>
+    <label><input type="radio" name="q27" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">4 часа</span></label>
+    <label><input type="radio" name="q27" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">6 часов</span></label>
+    <div class="feedback" id="feedback27"></div>
+  </div>
+
+  <!-- Вопрос 28 -->
+  <div class="question" id="q28">
+    <p><strong>Вопрос 28:</strong> Система организации оказания медицинской помощи пораженным в ЧС</p>
+    <label><input type="radio" name="q28" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">многоэтапная</span></label>
+    <label><input type="radio" name="q28" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">одноэтапная</span></label>
+    <label><input type="radio" name="q28" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">двухэтапная</span></label>
+    <label><input type="radio" name="q28" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">трехэтапная</span></label>
+    <label><input type="radio" name="q28" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">пятиэтапная</span></label>
+    <div class="feedback" id="feedback28"></div>
+  </div>
+
+  <!-- Вопрос 29 -->
+  <div class="question" id="q29">
+    <p><strong>Вопрос 29:</strong> В межведомственную координационную комиссию ВСМК федерального уровня не входят</p>
+    <label><input type="radio" name="q29" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">директор ЦМК "Защита"</span></label>
+    <label><input type="radio" name="q29" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">начальник ГВМУ</span></label>
+    <label><input type="radio" name="q29" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">начальник медицинской службы МО РФ</span></label>
+    <label><input type="radio" name="q29" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">министр обороны РФ</span></label>
+    <div class="feedback" id="feedback29"></div>
+  </div>
+
+  <!-- Вопрос 30 -->
+  <div class="question" id="q30">
+    <p><strong>Вопрос 30:</strong> Для размещения полевого многопрофильного госпиталя необходима площадка размером:</p>
+    <label><input type="radio" name="q30" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">500х600 метров</span></label>
+    <label><input type="radio" name="q30" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">50х60 метров</span></label>
+    <label><input type="radio" name="q30" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">150х250 метров</span></label>
+    <div class="feedback" id="feedback30"></div>
+  </div>
+
+  <!-- Вопрос 31 -->
+  <div class="question" id="q31">
+    <p><strong>Вопрос 31:</strong> Режимы функционирования ВСМК</p>
+    <label><input type="radio" name="q31" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">локальный, муниципальный, региональный, федеральный</span></label>
+    <label><input type="radio" name="q31" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">повседневной деятельности, повышенной готовности, чрезвычайной ситуации</span></label>
+    <label><input type="radio" name="q31" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">функциональный, территориальный</span></label>
+    <div class="feedback" id="feedback31"></div>
+  </div>
+
+  <!-- Вопрос 32 -->
+  <div class="question" id="q32">
+    <p><strong>Вопрос 32:</strong> Подвижный многопрофильный госпиталь является</p>
+    <label><input type="radio" name="q32" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">учреждением ВСМК</span></label>
+    <label><input type="radio" name="q32" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">штатным формированием ВСМК</span></label>
+    <label><input type="radio" name="q32" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">нештатным формированием ВСМК</span></label>
+    <div class="feedback" id="feedback32"></div>
+  </div>
+
+  <!-- Вопрос 33 -->
+  <div class="question" id="q33">
+    <p><strong>Вопрос 33:</strong> Подвижный многопрофильный госпиталь является формированием</p>
+    <label><input type="radio" name="q33" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">центра медицины катастроф</span></label>
+    <label><input type="radio" name="q33" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">МЧС</span></label>
+    <label><input type="radio" name="q33" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">территориальных органов здравоохранения</span></label>
+    <div class="feedback" id="feedback33"></div>
+  </div>
+
+  <!-- Вопрос 34 -->
+  <div class="question" id="q34">
+    <p><strong>Вопрос 34:</strong> Режим работы БСМП в районе ЧС:</p>
+    <label><input type="radio" name="q34" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">8 часа</span></label>
+    <label><input type="radio" name="q34" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">10 часа</span></label>
+    <label><input type="radio" name="q34" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">12 часов</span></label>
+    <label><input type="radio" name="q34" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">16 часов</span></label>
+    <div class="feedback" id="feedback34"></div>
+  </div>
+
+  <!-- Вопрос 35 -->
+  <div class="question" id="q35">
+    <p><strong>Вопрос 35:</strong> В подвижном многопрофильном госпитале из 156 человек персонала штатных работников</p>
+    <label><input type="radio" name="q35" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">52</span></label>
+    <label><input type="radio" name="q35" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">104</span></label>
+    <label><input type="radio" name="q35" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">148</span></label>
+    <div class="feedback" id="feedback35"></div>
+  </div>
+
+  <!-- Вопрос 36 -->
+  <div class="question" id="q36">
+    <p><strong>Вопрос 36:</strong> Время автономного функционирования подвижного многопрофильного госпиталя в очаге ЧС</p>
+    <label><input type="radio" name="q36" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">3 суток</span></label>
+    <label><input type="radio" name="q36" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">10 суток</span></label>
+    <label><input type="radio" name="q36" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">24 часа</span></label>
+    <label><input type="radio" name="q36" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">15 суток</span></label>
+    <div class="feedback" id="feedback36"></div>
+  </div>
+
+  <!-- Вопрос 37 -->
+  <div class="question" id="q37">
+    <p><strong>Вопрос 37:</strong> Лечебно-эвакуационное, санитарно-гигиеническое, противоэпидемическое обеспечение, медицинские мероприятия по защите населения и личного состава, участвующего в ликвидации чрезвычайных ситуаций, снабжение медицинским имуществом – это комплекс:</p>
+    <label><input type="radio" name="q37" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">медико-санитарного обеспечения</span></label>
+    <label><input type="radio" name="q37" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">защиты населения</span></label>
+    <label><input type="radio" name="q37" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">этапного оказания экстренной медицинской помощи</span></label>
+    <div class="feedback" id="feedback37"></div>
+  </div>
+
+  <!-- Вопрос 38 -->
+  <div class="question" id="q38">
+    <p><strong>Вопрос 38:</strong> Режимы деятельности ВСМК:</p>
+    <label><input type="radio" name="q38" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">изоляции, спасения, восстановления</span></label>
+    <label><input type="radio" name="q38" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">повседневной деятельности, ЧС, восстановительной деятельности</span></label>
+    <label><input type="radio" name="q38" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">повседневной деятельности, повышенной готовности, ЧС</span></label>
+    <label><input type="radio" name="q38" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">постоянной деятельности, повышенной деятельности, чрезвычайной деятельности</span></label>
+    <label><input type="radio" name="q38" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">повседневной готовности, повышенной готовности, чрезвычайной готовности</span></label>
+    <div class="feedback" id="feedback38"></div>
+  </div>
+
+  <!-- Вопрос 39 -->
+  <div class="question" id="q39">
+    <p><strong>Вопрос 39:</strong> Всероссийский центр медицины катастроф «Защита»</p>
+    <label><input type="radio" name="q39" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">территориальное учреждение ВСМК</span></label>
+    <label><input type="radio" name="q39" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">федеральное учреждение ВСМК</span></label>
+    <label><input type="radio" name="q39" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">региональное формирование ВСМК</span></label>
+    <label><input type="radio" name="q39" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">штатное формирование ВСМК</span></label>
+    <div class="feedback" id="feedback39"></div>
+  </div>
+
+  <!-- Вопрос 40 -->
+  <div class="question" id="q40">
+    <p><strong>Вопрос 40:</strong> За сколько часов работы ВСБ может оказать помощь 50 пораженным:</p>
+    <label><input type="radio" name="q40" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">2 часа</span></label>
+    <label><input type="radio" name="q40" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">6 часов</span></label>
+    <label><input type="radio" name="q40" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">10 часов</span></label>
+    <label><input type="radio" name="q40" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">12 часов</span></label>
+    <div class="feedback" id="feedback40"></div>
+  </div>
+
+  <!-- Вопрос 41 -->
+  <div class="question" id="q41">
+    <p><strong>Вопрос 41:</strong> Система организации оказания медицинской помощи пораженным в ЧС</p>
+    <label><input type="radio" name="q41" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">многоэтапная</span></label>
+    <label><input type="radio" name="q41" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">одноэтапная</span></label>
+    <label><input type="radio" name="q41" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">двухэтапная</span></label>
+    <label><input type="radio" name="q41" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">трехэтапная</span></label>
+    <label><input type="radio" name="q41" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">пятиэтапная</span></label>
+    <div class="feedback" id="feedback41"></div>
+  </div>
+
+  <!-- Вопрос 42 -->
+  <div class="question" id="q42">
+    <p><strong>Вопрос 42:</strong> ВСБ состоит из:</p>
+    <label><input type="radio" name="q42" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">2 человек</span></label>
+    <label><input type="radio" name="q42" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">4 человек</span></label>
+    <label><input type="radio" name="q42" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">6 человек</span></label>
+    <div class="feedback" id="feedback42"></div>
+  </div>
+
+  <!-- Вопрос 43 -->
+  <div class="question" id="q43">
+    <p><strong>Вопрос 43:</strong> Для подготовки полевого многопрофильного госпиталя к приему 1 потока пораженных требуется:</p>
+    <label><input type="radio" name="q43" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">2-3 часа</span></label>
+    <label><input type="radio" name="q43" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">5-6 часов</span></label>
+    <label><input type="radio" name="q43" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">6-8 часов</span></label>
+    <div class="feedback" id="feedback43"></div>
+  </div>
+
+  <!-- Вопрос 44 -->
+  <div class="question" id="q44">
+    <p><strong>Вопрос 44:</strong> Бригады специализированной медицинской помощи предназначены для</p>
+    <label><input type="radio" name="q44" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">формирования 1 этапа медицинской эвакуации</span></label>
+    <label><input type="radio" name="q44" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">формирования 2 этапа медицинской эвакуации</span></label>
+    <label><input type="radio" name="q44" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">специализации или усиления ЛПУ и формирований</span></label>
+    <label><input type="radio" name="q44" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">проведения специальных мероприятий 1 медицинской помощи</span></label>
+    <div class="feedback" id="feedback44"></div>
+  </div>
+
+  <!-- Вопрос 45 -->
+  <div class="question" id="q45">
+    <p><strong>Вопрос 45:</strong> Рабочая смена на эвакуационных пунктах для медицинских работников длится:</p>
+    <label><input type="radio" name="q45" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">8 часов</span></label>
+    <label><input type="radio" name="q45" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">12 часов</span></label>
+    <label><input type="radio" name="q45" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">16 часов</span></label>
+    <div class="feedback" id="feedback45"></div>
+  </div>
+
+  <!-- Вопрос 46 -->
+  <div class="question" id="q46">
+    <p><strong>Вопрос 46:</strong> Первую медицинскую помощь в пеших колоннах оказывают:</p>
+    <label><input type="radio" name="q46" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">медицинские работники из числа эвакуируемых или лица, имеющие навыки ее оказания</span></label>
+    <label><input type="radio" name="q46" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">бригады скорой медицинской помощи</span></label>
+    <label><input type="radio" name="q46" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">медицинские работники, выделенные учреждениями здравоохранения</span></label>
+    <div class="feedback" id="feedback46"></div>
+  </div>
+
+  <!-- Вопрос 47 -->
+  <div class="question" id="q47">
+    <p><strong>Вопрос 47:</strong> При эвакуации на большие расстояния на каждый поезд, судно выделяется медицинский персонал в составе:</p>
+    <label><input type="radio" name="q47" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">1 фельдшера и 2 медицинских сестер</span></label>
+    <label><input type="radio" name="q47" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">1 врача</span></label>
+    <label><input type="radio" name="q47" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">1 врача и 1-2 средних мед. работников</span></label>
+    <div class="feedback" id="feedback47"></div>
+  </div>
+
+  <!-- Вопрос 48 -->
+  <div class="question" id="q48">
+    <p><strong>Вопрос 48:</strong> В каждый медицинский пункт в пункте посадке (ПП) состоит из:</p>
+    <label><input type="radio" name="q48" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">медицинские работники из числа эвакуируемых или лица, имеющие навыки ее оказания</span></label>
+    <label><input type="radio" name="q48" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">бригады скорой медицинской помощи</span></label>
+    <label><input type="radio" name="q48" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">1 врача и 2 средних мед. работников</span></label>
+    <label><input type="radio" name="q48" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">2 средних мед. работников</span></label>
+    <div class="feedback" id="feedback48"></div>
+  </div>
+
+  <!-- Вопрос 49 -->
+  <div class="question" id="q49">
+    <p><strong>Вопрос 49:</strong> Медицинский персонал, занятый на работе в эвакопунктах, обязан при завершении эвакуационных мероприятий:</p>
+    <label><input type="radio" name="q49" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">вернуться в свои учреждения в городе или прибыть на новое место их размещения</span></label>
+    <label><input type="radio" name="q49" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">поступить в распоряжение руководителя здравоохранения муниципалитета</span></label>
+    <label><input type="radio" name="q49" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">поступить в распоряжение руководителя больничной базы</span></label>
+    <div class="feedback" id="feedback49"></div>
+  </div>
+
+  <!-- Вопрос 50 -->
+  <div class="question" id="q50">
+    <p><strong>Вопрос 50:</strong> При эвакуации населения на расстояние 250 км, для медико-санитарного обеспечения на каждый поезд, судно выделяется:</p>
+    <label><input type="radio" name="q50" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">1 врач</span></label>
+    <label><input type="radio" name="q50" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">1 врач и 1 медсестра</span></label>
+    <label><input type="radio" name="q50" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">1 врач и 2 медсестры</span></label>
+    <label><input type="radio" name="q50" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">1-2 медсестры</span></label>
+    <div class="feedback" id="feedback50"></div>
+  </div>
+
+  <!-- Вопрос 51 -->
+  <div class="question" id="q51">
+    <p><strong>Вопрос 51:</strong> Оказание врачебной помощи при эвакуации населения на маршруте движения планируют и организуют:</p>
+    <label><input type="radio" name="q51" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">местные органы здравоохранения, за счет имеющихся вблизи ЛПУ</span></label>
+    <label><input type="radio" name="q51" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">органы здравоохранения из населенного пункта, подвергшегося эвакуации</span></label>
+    <label><input type="radio" name="q51" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">органы ВСМК</span></label>
+    <label><input type="radio" name="q51" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">органы регионального здравоохранения</span></label>
+    <div class="feedback" id="feedback51"></div>
+  </div>
+
+  <!-- Вопрос 52 -->
+  <div class="question" id="q52">
+    <p><strong>Вопрос 52:</strong> Медико-санитарное обеспечение в местах размещения эвакуированного населения в мирное время осуществляется из расчета, на участке с населением:</p>
+    <label><input type="radio" name="q52" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">2500 чел. – 1 врач и 2 медсестры</span></label>
+    <label><input type="radio" name="q52" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">1500 чел. – 1 врач и 2 медсестры</span></label>
+    <label><input type="radio" name="q52" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">600 чел. – 1 врач и 2 медсестры</span></label>
+    <div class="feedback" id="feedback52"></div>
+  </div>
+
+  <!-- Вопрос 53 -->
+  <div class="question" id="q53">
+    <p><strong>Вопрос 53:</strong> Профилактические лекарственные средства, снижающие степень лучевого поражения</p>
+    <label><input type="radio" name="q53" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">адаптогены</span></label>
+    <label><input type="radio" name="q53" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">радиопротекторы</span></label>
+    <label><input type="radio" name="q53" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">комплексоны</span></label>
+    <div class="feedback" id="feedback53"></div>
+  </div>
+
+  <!-- Вопрос 54 -->
+  <div class="question" id="q54">
+    <p><strong>Вопрос 54:</strong> Требования к средствам медицинской защиты</p>
+    <label><input type="radio" name="q54" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">широкий спектр действия</span></label>
+    <label><input type="radio" name="q54" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">узкий спектр действия</span></label>
+    <label><input type="radio" name="q54" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">эффективность защитного действия</span></label>
+    <label><input type="radio" name="q54" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">универсальность защитного действия</span></label>
+    <div class="feedback" id="feedback54"></div>
+  </div>
+
+  <!-- Вопрос 55 -->
+  <div class="question" id="q55">
+    <p><strong>Вопрос 55:</strong> Сколько гнезд в аптечке индивидуальной (АИ-2)</p>
+    <label><input type="radio" name="q55" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">7</span></label>
+    <label><input type="radio" name="q55" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">5</span></label>
+    <label><input type="radio" name="q55" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">10</span></label>
+    <div class="feedback" id="feedback55"></div>
+  </div>
+
+  <!-- Вопрос 56 -->
+  <div class="question" id="q56">
+    <p><strong>Вопрос 56:</strong> В качестве противорвотного средства в аптечке индивидуальной (АИ-2) заложен</p>
+    <label><input type="radio" name="q56" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">афин</span></label>
+    <label><input type="radio" name="q56" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">атропин</span></label>
+    <label><input type="radio" name="q56" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">этаперазин</span></label>
+    <label><input type="radio" name="q56" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">тарен</span></label>
+    <label><input type="radio" name="q56" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">пантоцид</span></label>
+    <div class="feedback" id="feedback56"></div>
+  </div>
+
+  <!-- Вопрос 57 -->
+  <div class="question" id="q57">
+    <p><strong>Вопрос 57:</strong> Среднесуточная доза 5% р-ра йода для взрослого, применяемого при радиационных авариях в качестве радиозащитного действия</p>
+    <label><input type="radio" name="q57" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">22 капли</span></label>
+    <label><input type="radio" name="q57" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">44 капли</span></label>
+    <label><input type="radio" name="q57" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">1 мл</span></label>
+    <div class="feedback" id="feedback57"></div>
+  </div>
+
+  <!-- Вопрос 58 -->
+  <div class="question" id="q58">
+    <p><strong>Вопрос 58:</strong> Вещества, способные захватывать на свою поверхность радиоактивные и др. вредные вещества и вместе с ними они выводятся из организма</p>
+    <label><input type="radio" name="q58" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">адаптогены</span></label>
+    <label><input type="radio" name="q58" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">радиопротекторы</span></label>
+    <label><input type="radio" name="q58" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">комплексоны</span></label>
+    <label><input type="radio" name="q58" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">адсорбенты</span></label>
+    <div class="feedback" id="feedback58"></div>
+  </div>
+
+  <!-- Вопрос 59 -->
+  <div class="question" id="q59">
+    <p><strong>Вопрос 59:</strong> Препараты, повышающие общую сопротивляемость организма к различным неблагоприятным факторам, в том числе и к радиации</p>
+    <label><input type="radio" name="q59" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">адаптогены</span></label>
+    <label><input type="radio" name="q59" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">радиопротекторы</span></label>
+    <label><input type="radio" name="q59" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">комплексоны</span></label>
+    <label><input type="radio" name="q59" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">адсорбенты</span></label>
+    <div class="feedback" id="feedback59"></div>
+  </div>
+
+  <!-- Вопрос 60 -->
+  <div class="question" id="q60">
+    <p><strong>Вопрос 60:</strong> В качестве антидота при отравлении ФОВ в аптечке индивидуальной (АИ-2) заложен</p>
+    <label><input type="radio" name="q60" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">афин</span></label>
+    <label><input type="radio" name="q60" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">атропин</span></label>
+    <label><input type="radio" name="q60" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">этаперазин</span></label>
+    <label><input type="radio" name="q60" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">тарен</span></label>
+    <label><input type="radio" name="q60" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">пантоцид</span></label>
+    <div class="feedback" id="feedback60"></div>
+  </div>
+
+  <!-- Вопрос 61 -->
+  <div class="question" id="q61">
+    <p><strong>Вопрос 61:</strong> Профилактические лекарственные средства, ускоряющие выведение радиоактивных веществ из организма</p>
+    <label><input type="radio" name="q61" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">адаптогены</span></label>
+    <label><input type="radio" name="q61" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">радиопротекторы</span></label>
+    <label><input type="radio" name="q61" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">комплексоны</span></label>
+    <label><input type="radio" name="q61" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">адсорбенты</span></label>
+    <div class="feedback" id="feedback61"></div>
+  </div>
+
+  <!-- Вопрос 62 -->
+  <div class="question" id="q62">
+    <p><strong>Вопрос 62:</strong> Запасы питьевой воды в ЛПУ создаются из расчета</p>
+    <label><input type="radio" name="q62" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">10 л/сутки на больного</span></label>
+    <label><input type="radio" name="q62" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">12 л/сутки на больного</span></label>
+    <label><input type="radio" name="q62" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">2 л/сутки на больного</span></label>
+    <div class="feedback" id="feedback62"></div>
+  </div>
+
+  <!-- Вопрос 63 -->
+  <div class="question" id="q63">
+    <p><strong>Вопрос 63:</strong> При получении информации о возникновении ЧС, дежурный по больнице принимает меры к выполнению следующего мероприятия:</p>
+    <label><input type="radio" name="q63" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">уточняются списки больных, которые могут быть выписаны</span></label>
+    <label><input type="radio" name="q63" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">уточняются знания медицинским персоналом своих обязанностей</span></label>
+    <label><input type="radio" name="q63" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">введение круглосуточного дежурства руководящего состава больницы</span></label>
+    <div class="feedback" id="feedback63"></div>
+  </div>
+
+  <!-- Вопрос 64 -->
+  <div class="question" id="q64">
+    <p><strong>Вопрос 64:</strong> При полной эвакуации ЛПУ защите подлежат:</p>
+    <label><input type="radio" name="q64" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">больные и персонал</span></label>
+    <label><input type="radio" name="q64" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">больные, персонал и имущество</span></label>
+    <label><input type="radio" name="q64" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">больные, персонал, личный состав медицинских формирований и имущество</span></label>
+    <label><input type="radio" name="q64" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">больные, персонал, личный состав медицинских формирований, члены семей персонала и имущество</span></label>
+    <div class="feedback" id="feedback64"></div>
+  </div>
+
+  <!-- Вопрос 65 -->
+  <div class="question" id="q65">
+    <p><strong>Вопрос 65:</strong> Заключительным этапом эвакуационных мероприятий является:</p>
+    <label><input type="radio" name="q65" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">консервация здания больницы и сдача его под охрану</span></label>
+    <label><input type="radio" name="q65" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">перевоз нетранспортабельных больных в стационары для этой категории</span></label>
+    <label><input type="radio" name="q65" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">вывоз всего имущества, персонала и больных из здания больницы</span></label>
+    <div class="feedback" id="feedback65"></div>
+  </div>
+
+  <!-- Вопрос 66 -->
+  <div class="question" id="q66">
+    <p><strong>Вопрос 66:</strong> Частичная эвакуация ЛПУ производится как правило</p>
+    <label><input type="radio" name="q66" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">в плановом порядке</span></label>
+    <label><input type="radio" name="q66" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">в обязательном порядке</span></label>
+    <label><input type="radio" name="q66" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">в экстренном порядке</span></label>
+    <div class="feedback" id="feedback66"></div>
+  </div>
+
+  <!-- Вопрос 67 -->
+  <div class="question" id="q67">
+    <p><strong>Вопрос 67:</strong> При угрозе возникновения ЧС в ЛПУ проводится:</p>
+    <label><input type="radio" name="q67" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">подготовка больницы к приему пораженных</span></label>
+    <label><input type="radio" name="q67" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">укрытие персонала и больных в защитных сооружениях</span></label>
+    <label><input type="radio" name="q67" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">уточнение порядка эвакуации пораженных</span></label>
+    <div class="feedback" id="feedback67"></div>
+  </div>
+
+  <!-- Вопрос 68 -->
+  <div class="question" id="q68">
+    <p><strong>Вопрос 68:</strong> Сортировочный пост (СП) при поступлении пораженных в больницу развертывается:</p>
+    <label><input type="radio" name="q68" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">в приемном отделении</span></label>
+    <label><input type="radio" name="q68" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">на сортировочной площадке</span></label>
+    <label><input type="radio" name="q68" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">при въезде в больницу</span></label>
+    <div class="feedback" id="feedback68"></div>
+  </div>
+
+  <!-- Вопрос 69 -->
+  <div class="question" id="q69">
+    <p><strong>Вопрос 69:</strong> При получении информации о возникновении ЧС, дежурный по больнице принимает меры к выполнению следующего мероприятия:</p>
+    <label><input type="radio" name="q69" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">уточняются знания медицинским персоналом своих обязанностей</span></label>
+    <label><input type="radio" name="q69" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">проверяется наличие аварийного освещения и водоснабжения</span></label>
+    <label><input type="radio" name="q69" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">введение круглосуточного дежурства руководящего состава больницы</span></label>
+    <div class="feedback" id="feedback69"></div>
+  </div>
+
+  <!-- Вопрос 70 -->
+  <div class="question" id="q70">
+    <p><strong>Вопрос 70:</strong> Сущность этапного лечения заключается в</p>
+    <label><input type="radio" name="q70" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">своевременности, последовательности и преемственности оказании медицинской помощи</span></label>
+    <label><input type="radio" name="q70" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">плановости, эффективности и последовательности оказания медицинской помощи</span></label>
+    <div class="feedback" id="feedback70"></div>
+  </div>
+
+  <!-- Вопрос 71 -->
+  <div class="question" id="q71">
+    <p><strong>Вопрос 71:</strong> Формирования и учреждения, развернутые на путях эвакуации пораженных и обеспечивающие их прием, медицинскую сортировку, оказание регламентируемой медицинской помощи, лечение и подготовку (при необходимости) к дальнейшей эвакуации</p>
+    <label><input type="radio" name="q71" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">лечебно-эвакуационное направление</span></label>
+    <label><input type="radio" name="q71" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">этап медицинской эвакуации</span></label>
+    <label><input type="radio" name="q71" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">маршрут медицинской эвакуации</span></label>
+    <div class="feedback" id="feedback71"></div>
+  </div>
+
+  <!-- Вопрос 72 -->
+  <div class="question" id="q72">
+    <p><strong>Вопрос 72:</strong> Функциональным подразделением этапа медицинской эвакуации является</p>
+    <label><input type="radio" name="q72" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">формирование службы медицины катастроф</span></label>
+    <label><input type="radio" name="q72" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">подвижный многопрофильный госпиталь</span></label>
+    <label><input type="radio" name="q72" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">приемно-сортировочное отделение</span></label>
+    <div class="feedback" id="feedback72"></div>
+  </div>
+
+  <!-- Вопрос 73 -->
+  <div class="question" id="q73">
+    <p><strong>Вопрос 73:</strong> Медицинская помощь пораженным оказывается в</p>
+    <label><input type="radio" name="q73" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">госпитальном отделении</span></label>
+    <label><input type="radio" name="q73" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">в перевязочной</span></label>
+    <label><input type="radio" name="q73" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">в приемно-сортировочном отделении</span></label>
+    <div class="feedback" id="feedback73"></div>
+  </div>
+
+  <!-- Вопрос 74 -->
+  <div class="question" id="q74">
+    <p><strong>Вопрос 74:</strong> Официально установленный перечень лечебно-профилактических мероприятий, выполняемых в порядке само- и взаимопомощи, медицинским персоналом определенной квалификации в системе лечебно-эвакуационного обеспечения с использованием табельного медицинского оснащения (за исключением само- и взаимопомощи)</p>
+    <label><input type="radio" name="q74" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">объем медицинской помощи</span></label>
+    <label><input type="radio" name="q74" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">вид медицинской помощи</span></label>
+    <div class="feedback" id="feedback74"></div>
+  </div>
+
+  <!-- Вопрос 75 -->
+  <div class="question" id="q75">
+    <p><strong>Вопрос 75:</strong> Какое мероприятие не входит в первую медицинскую помощь</p>
+    <label><input type="radio" name="q75" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">согревание пораженного</span></label>
+    <label><input type="radio" name="q75" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">наложение повязок</span></label>
+    <label><input type="radio" name="q75" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">временная остановка внутреннего кровотечения</span></label>
+    <label><input type="radio" name="q75" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">проведение частичной санитарной обработки</span></label>
+    <label><input type="radio" name="q75" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">прием радиопротекторов</span></label>
+    <label><input type="radio" name="q75" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">вынос из зоны заражения</span></label>
+    <div class="feedback" id="feedback75"></div>
+  </div>
+
+  <!-- Вопрос 76 -->
+  <div class="question" id="q76">
+    <p><strong>Вопрос 76:</strong> Вид медицинской помощи, включающий комплекс лечебно-профилактических мероприятий, выполняемых врачами-специалистами широкого профиля в медицинских формированиях и учреждениях с целью сохранения жизни пораженных, предупреждения осложнений, подготовки (при необходимости) к дальнейшей эвакуации</p>
+    <label><input type="radio" name="q76" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">первая врачебная</span></label>
+    <label><input type="radio" name="q76" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">квалифицированная</span></label>
+    <label><input type="radio" name="q76" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">специализированная</span></label>
+    <div class="feedback" id="feedback76"></div>
+  </div>
+
+  <!-- Вопрос 77 -->
+  <div class="question" id="q77">
+    <p><strong>Вопрос 77:</strong> Оптимальный срок оказания первой врачебной помощи</p>
+    <label><input type="radio" name="q77" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">30 мин.</span></label>
+    <label><input type="radio" name="q77" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">1 час</span></label>
+    <label><input type="radio" name="q77" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">3 часа</span></label>
+    <label><input type="radio" name="q77" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">4-6 часов</span></label>
+    <label><input type="radio" name="q77" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">12 часов</span></label>
+    <div class="feedback" id="feedback77"></div>
+  </div>
+
+  <!-- Вопрос 78 -->
+  <div class="question" id="q78">
+    <p><strong>Вопрос 78:</strong> Промывание желудка "ресторанным" способом применяется при оказании</p>
+    <label><input type="radio" name="q78" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">первой медицинской помощи</span></label>
+    <label><input type="radio" name="q78" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">первой врачебной помощи</span></label>
+    <label><input type="radio" name="q78" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">квалифицированной помощи</span></label>
+    <div class="feedback" id="feedback78"></div>
+  </div>
+
+  <!-- Вопрос 79 -->
+  <div class="question" id="q79">
+    <p><strong>Вопрос 79:</strong> Квалифицированная медицинская помощь подразделяется на</p>
+    <label><input type="radio" name="q79" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">хирургическую и терапевтическую</span></label>
+    <label><input type="radio" name="q79" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">сокращенную и полную</span></label>
+    <label><input type="radio" name="q79" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">врачебную и доврачебную</span></label>
+    <div class="feedback" id="feedback79"></div>
+  </div>
+
+  <!-- Вопрос 80 -->
+  <div class="question" id="q80">
+    <p><strong>Вопрос 80:</strong> На сколько подгрупп подразделяют отсроченные мероприятия квалифицированной хирургической помощи</p>
+    <label><input type="radio" name="q80" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">1</span></label>
+    <label><input type="radio" name="q80" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">2</span></label>
+    <label><input type="radio" name="q80" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">3</span></label>
+    <div class="feedback" id="feedback80"></div>
+  </div>
+
+  <!-- Вопрос 81 -->
+  <div class="question" id="q81">
+    <p><strong>Вопрос 81:</strong> Первичная хирургическая обработка не осложненных, не зараженных и не ведущих к тяжелым осложнениям ран производится при проведении мероприятий</p>
+    <label><input type="radio" name="q81" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">сокращенного объема первой врачебной помощи</span></label>
+    <label><input type="radio" name="q81" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">полного объема первой врачебной помощи</span></label>
+    <label><input type="radio" name="q81" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">неотложных мероприятий квалифицированной хирургической помощи</span></label>
+    <label><input type="radio" name="q81" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">первой подгруппы отсроченных мероприятий квалифицированной хирургической помощи</span></label>
+    <label><input type="radio" name="q81" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">второй подгруппы отсроченных мероприятий квалифицированной хирургической помощи</span></label>
+    <div class="feedback" id="feedback81"></div>
+  </div>
+
+  <!-- Вопрос 82 -->
+  <div class="question" id="q82">
+    <p><strong>Вопрос 82:</strong> Окончательная остановка кровотечений относится к мероприятиям</p>
+    <label><input type="radio" name="q82" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">первой медицинской помощи</span></label>
+    <label><input type="radio" name="q82" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">доврачебной помощи</span></label>
+    <label><input type="radio" name="q82" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">первой врачебной помощи</span></label>
+    <label><input type="radio" name="q82" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">квалифицированной помощи</span></label>
+    <label><input type="radio" name="q82" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">специализированной помощи</span></label>
+    <div class="feedback" id="feedback82"></div>
+  </div>
+
+  <!-- Вопрос 83 -->
+  <div class="question" id="q83">
+    <p><strong>Вопрос 83:</strong> Что является этапом медицинской эвакуации</p>
+    <label><input type="radio" name="q83" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">санитарная дружина</span></label>
+    <label><input type="radio" name="q83" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">сортировочная площадка</span></label>
+    <label><input type="radio" name="q83" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">бригада доврачебной помощи</span></label>
+    <label><input type="radio" name="q83" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">медицинский отряд</span></label>
+    <div class="feedback" id="feedback83"></div>
+  </div>
+
+  <!-- Вопрос 84 -->
+  <div class="question" id="q84">
+    <p><strong>Вопрос 84:</strong> Надлобковая пункция мочевого пузыря при задержке мочевыделения относится к мероприятиям</p>
+    <label><input type="radio" name="q84" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">доврачебной помощи</span></label>
+    <label><input type="radio" name="q84" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">первой врачебной помощи</span></label>
+    <label><input type="radio" name="q84" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">квалифицированной помощи</span></label>
+    <label><input type="radio" name="q84" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">специализированной помощи</span></label>
+    <div class="feedback" id="feedback84"></div>
+  </div>
+
+  <!-- Вопрос 85 -->
+  <div class="question" id="q85">
+    <p><strong>Вопрос 85:</strong> Временные нормативы для осмотра одного пораженного при массовом поступлении в приемно-сортировочное отделение 1 этапа</p>
+    <label><input type="radio" name="q85" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">15-40 сек.</span></label>
+    <label><input type="radio" name="q85" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">2-5 мин.</span></label>
+    <label><input type="radio" name="q85" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">до 10 мин.</span></label>
+    <div class="feedback" id="feedback85"></div>
+  </div>
+
+  <!-- Вопрос 86 -->
+  <div class="question" id="q86">
+    <p><strong>Вопрос 86:</strong> Временные нормативы для осмотра одного пораженного при массовом поступлении в приемно-сортировочное отделение II этапа</p>
+    <label><input type="radio" name="q86" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">15-40 сек.</span></label>
+    <label><input type="radio" name="q86" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">2-5 мин.</span></label>
+    <label><input type="radio" name="q86" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">до 10 мин.</span></label>
+    <div class="feedback" id="feedback86"></div>
+  </div>
+
+  <!-- Вопрос 87 -->
+  <div class="question" id="q87">
+    <p><strong>Вопрос 87:</strong> Виды медицинской сортировки</p>
+    <label><input type="radio" name="q87" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">опасность для окружающих, лечебный и эвакуационный</span></label>
+    <label><input type="radio" name="q87" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">внутрипунктовая и эвакуационно-транспортная</span></label>
+    <label><input type="radio" name="q87" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">неотложный и отсроченный</span></label>
+    <div class="feedback" id="feedback87"></div>
+  </div>
+
+  <!-- Вопрос 88 -->
+  <div class="question" id="q88">
+    <p><strong>Вопрос 88:</strong> Принципы медицинской сортировки</p>
+    <label><input type="radio" name="q88" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">непрерывность, обязательность, преемственность и конкретность</span></label>
+    <label><input type="radio" name="q88" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">своевременность, эффективность и непрерывность</span></label>
+    <label><input type="radio" name="q88" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">последовательность, плановость, обязательность</span></label>
+    <div class="feedback" id="feedback88"></div>
+  </div>
+
+  <!-- Вопрос 89 -->
+  <div class="question" id="q89">
+    <p><strong>Вопрос 89:</strong> Основные сортировочные признаки</p>
+    <label><input type="radio" name="q89" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">непрерывность, обязательность, преемственность и конкретность</span></label>
+    <label><input type="radio" name="q89" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">опасность для окружающих, лечебный и эвакуационный</span></label>
+    <label><input type="radio" name="q89" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">своевременность, эффективность и непрерывность</span></label>
+    <div class="feedback" id="feedback89"></div>
+  </div>
+
+  <!-- Вопрос 90 -->
+  <div class="question" id="q90">
+    <p><strong>Вопрос 90:</strong> По лечебному сортировочному признаку пораженных подразделяют на группы</p>
+    <label><input type="radio" name="q90" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">нуждающийся в оказании мед.помощи, не нуждающийся в оказании мед.помощи (мед.помощь может быть отсрочена), агонирующие</span></label>
+    <label><input type="radio" name="q90" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">нуждающийся в оказании мед.помощи, не нуждающийся в оказании мед.помощи (мед.помощь может быть отсрочена)</span></label>
+    <label><input type="radio" name="q90" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">легкопораженные, пораженные средней тяжести, тяжелопораженные</span></label>
+    <div class="feedback" id="feedback90"></div>
+  </div>
+
+  <!-- Вопрос 91 -->
+  <div class="question" id="q91">
+    <p><strong>Вопрос 91:</strong> Состав бригады для медицинской сортировки ходячих пораженных</p>
+    <label><input type="radio" name="q91" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">врач, фельдшер, санитар</span></label>
+    <label><input type="radio" name="q91" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">врач, медсестра, санитар</span></label>
+    <label><input type="radio" name="q91" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">врач, медсестра, регистратор</span></label>
+    <label><input type="radio" name="q91" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">врач, 2 медсестры, 2 регистратора</span></label>
+    <label><input type="radio" name="q91" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">2 врача, 2 медсестры, 2 регистратора</span></label>
+    <label><input type="radio" name="q91" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">врач, 2 медсестры, регистратор</span></label>
+    <div class="feedback" id="feedback91"></div>
+  </div>
+
+  <!-- Вопрос 92 -->
+  <div class="question" id="q92">
+    <p><strong>Вопрос 92:</strong> Очередность определяют марки</p>
+    <label><input type="radio" name="q92" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">операционная, перевязочная, эвакуационная</span></label>
+    <label><input type="radio" name="q92" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">операционная, противошоковая, перевязочная</span></label>
+    <label><input type="radio" name="q92" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">операционная, перевязочная, госпитальная, эвакуационная</span></label>
+    <div class="feedback" id="feedback92"></div>
+  </div>
+
+  <!-- Вопрос 93 -->
+  <div class="question" id="q93">
+    <p><strong>Вопрос 93:</strong> Красный цвет сортировочной марки определяет</p>
+    <label><input type="radio" name="q93" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">нуждаемость в неотложной помощи</span></label>
+    <label><input type="radio" name="q93" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">тяжесть поражения</span></label>
+    <label><input type="radio" name="q93" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">травма несовместимая с жизнью</span></label>
+    <div class="feedback" id="feedback93"></div>
+  </div>
+
+  <!-- Вопрос 94 -->
+  <div class="question" id="q94">
+    <p><strong>Вопрос 94:</strong> Пораженные с тяжелыми и средней тяжести повреждениями, у которых не исключена возможность развития опасных для жизни осложнений, относятся по вероятному прогнозу</p>
+    <label><input type="radio" name="q94" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">к 1 группе</span></label>
+    <label><input type="radio" name="q94" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">ко 2 группе</span></label>
+    <label><input type="radio" name="q94" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">к 3 группе</span></label>
+    <label><input type="radio" name="q94" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">к 4 группе</span></label>
+    <label><input type="radio" name="q94" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">к 5 группе</span></label>
+    <div class="feedback" id="feedback94"></div>
+  </div>
+
+  <!-- Вопрос 95 -->
+  <div class="question" id="q95">
+    <p><strong>Вопрос 95:</strong> Маршрут по которому осуществляется вынос и транспортировка пораженных</p>
+    <label><input type="radio" name="q95" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">плечо медицинской эвакуации</span></label>
+    <label><input type="radio" name="q95" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">эвакуационное направление</span></label>
+    <label><input type="radio" name="q95" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">путь медицинской эвакуации</span></label>
+    <div class="feedback" id="feedback95"></div>
+  </div>
+
+  <!-- Вопрос 96 -->
+  <div class="question" id="q96">
+    <p><strong>Вопрос 96:</strong> Расстояние от пункта отправки пораженного до места назначения</p>
+    <label><input type="radio" name="q96" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">плечо медицинской эвакуации</span></label>
+    <label><input type="radio" name="q96" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">эвакуационное направление</span></label>
+    <label><input type="radio" name="q96" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">путь медицинской эвакуации</span></label>
+    <div class="feedback" id="feedback96"></div>
+  </div>
+
+  <!-- Вопрос 97 -->
+  <div class="question" id="q97">
+    <p><strong>Вопрос 97:</strong> Химически опасный объект с запасом хлора 50-250 т, аммиака 500-2500 т. относится к объектам</p>
+    <label><input type="radio" name="q97" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">1 степени</span></label>
+    <label><input type="radio" name="q97" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">2 степени</span></label>
+    <label><input type="radio" name="q97" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">3 степени</span></label>
+    <div class="feedback" id="feedback97"></div>
+  </div>
+
+  <!-- Вопрос 98 -->
+  <div class="question" id="q98">
+    <p><strong>Вопрос 98:</strong> Отравления при которых число пораженных более 50 человек являются</p>
+    <label><input type="radio" name="q98" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">массовыми</span></label>
+    <label><input type="radio" name="q98" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">групповыми</span></label>
+    <div class="feedback" id="feedback98"></div>
+  </div>
+
+  <!-- Вопрос 99 -->
+  <div class="question" id="q99">
+    <p><strong>Вопрос 99:</strong> Какие существуют оценки санитарно-эпидемиологического состояния территории?</p>
+    <label><input type="radio" name="q99" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">Благополучное, неустойчивое, неблагополучное, чрезвычайное.</span></label>
+    <label><input type="radio" name="q99" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">Благополучное, неблагополучное, чрезвычайное.</span></label>
+    <label><input type="radio" name="q99" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">Благополучное, неустойчивое, неблагополучное, чрезвычайное, катастрофическое.</span></label>
+    <div class="feedback" id="feedback99"></div>
+  </div>
+
+  <!-- Вопрос 100 -->
+  <div class="question" id="q100">
+    <p><strong>Вопрос 100:</strong> Медицинские средства индивидуальной защиты относятся</p>
+    <label><input type="radio" name="q100" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">к медицинскому имуществу</span></label>
+    <label><input type="radio" name="q100" data-correct="false" onclick="checkAnswer(this)"><span class="option-text">к санитарно-хозяйственному имуществу</span></label>
+    <label><input type="radio" name="q100" data-correct="true" onclick="checkAnswer(this)"><span class="option-text">к специальному имуществу</span></label>
+    <div class="feedback" id="feedback100"></div>
+  </div>
+
+</body>
+</html>
